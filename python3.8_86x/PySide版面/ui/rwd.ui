@@ -1,0 +1,1539 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1116</width>
+    <height>893</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">*{
+background-color: rgb(80, 80, 80);
+font: 12pt &quot;華康儷粗黑&quot;;
+color: rgb(250,250,250);
+selection-background-color: rgb(255, 255, 255);/*選中文字*/
+selection-color: rgb(0, 0, 0);
+outline:none;/*焦點框*/
+}
+#centralWidget{
+background-color: rgb(80, 80, 80);
+border-bottom:5px solid rgb(20, 20, 20);
+}
+/*其他(控制元件公共樣式在最後)*/
+
+/*tab 1中按鈕示例*/
+#btnHoverOrange{
+border-color:rgb(255, 170, 0);
+}
+#btnPressOrange{
+color:black;
+border-color: rgb(128, 128, 128);
+background-color:rgb(255, 170, 0);
+}
+#btnHoverBlue{
+border-color:rgb(0, 170, 255);
+}
+#btnPressBlue{
+color:black;
+border-color: rgb(128, 128, 128);
+background-color:rgb(0, 170, 255);
+}
+/*tab 1中勾選框示例*/
+#checkHoverOrange{
+color: rgb(255, 170, 0);
+}
+#checkHoverOrange::indicator{
+border-image: url(:/img/check_orange.png);
+}
+#checkCheckOrange::indicator{
+border-image: url(:/img/checked_orange.png);
+}
+#checkHoverBlue{
+color: rgb(0, 170, 255);
+}
+#checkHoverBlue::indicator{
+border-image: url(:/img/check_blue.png);
+}
+#checkCheckBlue::indicator{
+border-image: url(:/img/checked_blue.png);
+}
+#checkHoverGreen{
+color: rgb(0, 255, 127);
+}
+#checkHoverGreen::indicator{
+border-image: url(:/img/check_green.png);
+}
+#checkCheckGreen::indicator{
+border-image: url(:/img/checked_green.png);
+}
+/*tab1 下拉框示例*/
+#comboHover{
+border:1px solid rgb(255, 170, 0);
+}
+#comboHover::down-arrow{
+border-image: url(:/img/down_orange.png);
+}
+/*tab 1編輯框示例*/
+#editHover{
+border:1px solid rgb(255, 170, 0);
+}
+/*tab 1數字框示例*/
+#spinHoverOrange{
+border:1px solid rgb(255, 170, 0);
+}
+#spinHoverOrange::up-button{
+border-image: url(:/img/up_orange.png);
+}
+#spinHoverBlue{
+border:1px solid rgb(0, 170, 255);
+}
+#spinHoverBlue::up-button{
+border-image: url(:/img/up_blue.png);
+}
+/*自定義按鈕欄*/
+#toolBar{	
+background-color: rgb(20, 20, 20);
+border-bottom:2px solid rgb(0, 170, 255);
+}
+#toolBar QPushButton{	
+color: rgb(250, 250, 250);
+border:0;
+border-radius:0;
+background-color: transparent;
+}
+#toolBar QPushButton:hover{		
+color:rgb(255, 170, 0);
+background-color: rgba(255, 255, 255, 50);
+}
+#toolBar QPushButton:pressed{		
+background-color: rgba(255, 255, 255, 80);
+}
+QPushButton#btnSet{
+background-image: url(:/img/set_gray.png);
+background-repeat:no-repeat;
+background-position:center center;
+}
+QPushButton#btnSet:hover{
+background-image: url(:/img/set_orange.png);
+}
+QPushButton#btnMin{
+background-image: url(:/img/min_gray.png);
+background-repeat:no-repeat;
+background-position:center center;
+}
+QPushButton#btnMin:hover{
+background-image: url(:/img/min_orange.png);
+}
+QPushButton#btnMax{
+background-image: url(:/img/max_gray.png);
+background-repeat:no-repeat;
+background-position:center center;
+}
+QPushButton#btnMax:hover{
+background-image: url(:/img/max_orange.png);
+}
+QPushButton#btnClose{
+background-image: url(:/img/close_gray.png);
+background-repeat:no-repeat;
+background-position:center center;
+}
+QPushButton#btnClose:hover{
+background-image: url(:/img/close_red.png);
+}
+
+/*ToolBox*/
+QToolBox{
+background-color: rgb(80, 80, 80);/*背景色-空隙顏色*/
+border:1px solid rgb(128, 128, 128);
+}
+QToolBox QWidget{/*tab頁*/
+background-color: rgb(80, 80, 80);
+}
+QToolBox&gt;QAbstractButton{/*標題欄*/
+min-height:30px;
+}
+QToolBox::tab{
+background-color:rgb(40, 40, 40);
+}
+QToolBox::tab:hover{
+color:black;
+background-color: rgb(255, 170, 0);
+}
+QToolBox::tab:selected{
+color:rgb(255, 170, 0);
+}
+QToolBox::tab:selected:hover{
+color:black;
+}
+/*分裂器*/
+QSplitter::handle{
+background-color: rgb(60, 60, 60);
+margin:2px;
+}
+/*滾動區域*/
+QScrollArea{
+border:0;
+background-color: transparent;
+}
+/*滾動條 */
+QScrollBar:vertical{/*豎向*/
+width:20px;
+padding:0 3px;
+margin:0;
+background-color:transparent;
+}
+QScrollBar::add-page:vertical,QScrollBar::sub-page:vertical{
+background-color: transparent;
+}
+QScrollBar::handle:vertical{
+width:10px;
+min-height:20px;
+margin:20px 0;
+background-color:rgb(100, 100, 100);
+}
+QScrollBar::handle:vertical:hover{
+background-color:rgb(150, 150, 150);
+}
+QScrollBar::add-line:vertical{
+height:20px;
+width:20px;
+subcontrol-position:bottom;
+border-image: url(:/img/down2_white.png);
+}
+QScrollBar::sub-line:vertical{
+height:20px;
+width:20px;
+subcontrol-position:top;
+border-image: url(:/img/up2_white.png);
+}
+QScrollBar::sub-line:vertical:hover{
+border-image: url(:/img/up2_orange.png);
+}
+QScrollBar::add-line:vertical:hover{
+border-image: url(:/img/down2_orange.png);
+}
+QScrollBar:horizontal{/*橫向*/
+height:20px;
+padding:3px;
+margin:0;
+background-color:transparent;
+}
+QScrollBar::add-page:horizontal,QScrollBar::sub-page:horizontal{
+background-color: transparent;
+}
+QScrollBar::handle:horizontal{
+height:10px;
+min-width:20px;
+margin:0 20px;
+background-color:rgb(100, 100, 100);
+}
+QScrollBar::handle:horizontal:hover{
+background-color:rgb(150, 150, 150);
+}
+QScrollBar::add-line:horizontal{
+height:20px;
+width:20px;
+subcontrol-position:right;
+border-image: url(:/img/right2_white.png);
+}
+QScrollBar::sub-line:horizontal{
+height:20px;
+width:20px;
+subcontrol-position:left;
+border-image: url(:/img/left2_white.png);
+}
+QScrollBar::add-line:horizontal:hover{
+border-image: url(:/img/right2_orange.png);
+}
+QScrollBar::sub-line:horizontal:hover{
+border-image: url(:/img/left2_orange.png);
+}
+/*TabWidget*/
+QTabWidget{
+}
+QTabWidget&gt;QWidget&gt;QWidget{/*tab頁*/
+background-color: rgb(80, 80, 80);
+}
+QTabWidget::tab-bar{
+alignment:left;/*tab位置*/
+}
+QTabWidget::pane { /*內容區域*/
+background-color: rgb(80, 80, 80);/*背景色-空隙顏色*/
+border:1px solid rgb(128, 128, 128);
+} 
+QTabBar{
+color:white;
+background-color:transparent;
+}
+QTabBar::tab{/*頁籤*/
+min-height:30px;
+width:120px;
+border-top-left-radius:20px;
+border-bottom-right-radius:20px;
+margin-right:1px;
+margin-bottom:1px;
+background-color:rgb(40, 40, 40);
+}
+QTabBar::tab:hover{
+color:black;
+background-color: rgb(255, 170, 0);
+border-bottom-right-radius:0px;
+}
+QTabBar::tab:selected{
+color:rgb(255, 170, 0);
+border-bottom-right-radius:0px;
+}
+QTabBar::tab:selected:hover{
+color:black;
+}
+QTabBar::tear{/*選項過多時的。。。*/
+imag:;
+}
+QTabBar::scroller{
+width:60px;
+}
+/*文字框*/
+QTextEdit{
+color:white;
+border:1px solid rgb(128, 128, 128);
+background-color: rgb(90, 90, 90);
+}
+/*按鈕*/
+QPushButton{
+color:rgb(250, 250, 250);
+border:1px solid rgb(128, 128, 128);
+background-color: rgb(40 ,40 ,40);
+border-radius:4px;
+}
+QPushButton:hover{
+border-color:rgb(255, 170, 0);
+}
+QPushButton:pressed{
+background-color: rgb(255, 170, 0);
+border-color: rgb(128, 128, 128);
+color:black;
+}
+QPushButton:checked{
+color: rgb(0, 255, 127);
+border-color: rgb(0, 255, 127);
+background-image: url(:/img/right3_green.png);
+background-repeat:no-repeat;
+background-position:center left;
+}
+QPushButton:disabled{
+color: rgb(230, 230, 230);
+background-color: rgb(150, 150, 150);
+}
+QPushButton:checked:pressed{
+color:black;
+}
+QPushButton:checked:disabled{
+color: rgb(230, 230, 230);
+border-color: rgb(128, 128, 128);
+background-color: rgb(150, 150, 150);
+background-image: url(:/img/right3_white.png);
+}
+/*勾選框*/
+QCheckBox{
+margin-left:5px;
+spacing:3px;/*點選框與文字距離*/
+color: rgb(250,250,250);
+}
+QCheckBox:hover{
+color: rgb(0, 255, 127);
+}
+QCheckBox:disabled{
+color: rgb(230, 230, 230);
+}
+QCheckBox::indicator{/*點選框*/
+width:20px;
+height:20px;
+}
+
+/*下拉列表*/
+QComboBox{
+padding-left: 5px;
+padding-right: 2px;
+color:rgb(250 ,250 ,250);
+border:1px solid rgb(128, 128, 128);
+background-color:  rgb(100 ,100 ,100);
+}
+QComboBox:hover{
+border:1px solid rgb(255, 170, 0);
+}
+QComboBox:disabled{
+color: rgb(230, 230, 230);
+background-color:rgb(150, 150, 150);
+}
+QComboBox:editable{
+background-color:rgb(100, 100, 100);
+}
+QComboBox:editable:disabled{
+background-color:rgb(150, 150, 150);
+}
+QComboBox QAbstractItemView{
+background-color:rgb(110, 110, 110);
+}
+QComboBox QAbstractItemView::item{/*需要程式碼中-&amp;gt;setView(new QListView(this));*/
+height:26px;
+font: 15px &quot;宋體&quot;;
+}
+QComboBox QAbstractItemView::item:hover{
+color:black;
+background-color: rgb(255, 170, 0);
+}
+QComboBox QAbstractItemView::item:selected{
+background-color: rgb(255, 170, 0);
+}
+QComboBox::drop-down {
+width:20px;
+height:20px;
+subcontrol-position: center right;
+right:2px;
+border:0;
+background-color:transparent;
+}
+QComboBox::down-arrow {/*替換三角小圖示*/
+width:20px;
+height:20px;
+border-image: url(:/img/down_white.png);
+}
+QComboBox::down-arrow:hover {
+border-image: url(:/img/down_orange.png);
+}
+QComboBox::down-arrow:disabled {
+border-image: url(:/img/down2_white.png);
+}
+/*編輯框*/
+QLineEdit{
+padding: 0 5px;
+color: rgb(250 ,250 ,250);
+background-color: rgb(100, 100, 100);
+border:1px solid rgb(128, 128, 128);
+}
+QLineEdit:hover{
+border:1px solid rgb(255, 170, 0);
+}
+QLineEdit[readOnly=true],QLineEdit:disabled{
+color: rgb(230, 230, 230);
+background-color:rgb(150, 150, 150);
+}
+/*整數框*/
+QSpinBox{
+padding:0 5px;
+color: rgb(250, 250, 250);
+background-color:  rgb(100, 100, 100);
+border:1px solid rgb(128, 128, 128);
+}
+QSpinBox:hover{
+border:1px solid rgb(255, 170, 0);
+}
+QSpinBox:disabled{
+color: rgb(230, 230, 230);
+background-color:rgb(150, 150, 150);
+}
+QSpinBox[buttonSymbols=&quot;0&quot;]::up-button{/*顯示按鈕=0*/
+width:20px;
+height:14px;
+subcontrol-origin:border;
+subcontrol-position:top right;
+right:2px;
+top:2px;
+border-image: url(:/img/up_white.png);
+}
+QSpinBox::up-button:hover{
+border-image: url(:/img/up_orange.png);
+}
+QSpinBox::up-button:pressed{
+}
+QSpinBox[buttonSymbols=&quot;0&quot;]::down-button{
+width:20px;
+height:14px;
+subcontrol-origin:border;
+subcontrol-position:bottom right;
+right:2px;
+bottom:2px;
+border-image: url(:/img/down_white.png);
+}
+QSpinBox::down-button:hover{
+border-image: url(:/img/down_orange.png);
+}
+QSpinBox::down-button:pressed{
+}
+QSpinBox::up-button:disabled{
+border-image: url(:/img/up2_white.png);
+}
+QSpinBox::down-button:disabled{
+border-image: url(:/img/down2_white.png);
+}
+/*表頭*/
+QHeaderView{
+font: 15px &quot;宋體&quot;;
+color:rgb(240, 240, 240);
+background-color: rgb(80, 80, 80);
+}
+QHeaderView::section:horizontal{/*橫表頭*/
+min-height:30px;
+border:0;
+border-bottom:1px solid rgb(0, 170, 255);
+background-color: rgb(60,60,60);
+}
+QHeaderView::section:vertical{/*豎表頭*/
+min-width:60px;
+padding-left:15px;
+border:1px solid rgb(128, 128, 128);
+border-top:0;
+border-left:0;
+background-color: rgb(60, 60, 60);
+}
+QHeaderView::section{
+font: 15px &quot;宋體&quot;;
+text-align:center;
+}
+QHeaderView::section:hover{
+color:black;
+background-color: rgb(255, 170, 0);
+}
+QHeaderView::section:checked{/*不取消高亮*/
+font: 15px &quot;宋體&quot;;
+font-weight:normal;
+color: rgb(255, 170, 0);
+}
+QHeaderView::section:selected{
+font: 15px &quot;宋體&quot;;
+font-weight:normal;
+color: red;
+}
+QHeaderView::section:checked:hover{
+font-weight:normal;
+color: rgb(240, 240, 240);
+}
+QHeaderView::section:first{/*表頭第一個位置*/
+}
+QHeaderView::down-arrow{/*圖示用來排序的*/
+}
+QHeaderView::up-arrow{
+}
+/*表格*/
+QTableView{/*對齊方式程式碼設定*/
+border:1px solid rgb(128, 128, 128);
+gridline-color: rgb(128, 128, 128);/*網格線顏色*/
+background-color: rgb(80, 80, 80);
+}
+QTableView QTableCornerButton::section{/*表頭左上*/
+background-color: rgb(60,60,60);
+border:0;
+border-bottom:1px solid rgb(0, 170, 255);
+}
+QTableView::item{/*表內容*/
+font: 15px &quot;宋體&quot;;
+color: rgb(250, 250, 250);
+background-color: rgb(80, 80, 80);
+}
+QTableView::item:selected{
+color:black;
+background-color: rgb(255, 170, 0);
+}
+QTableView::indicator{
+width: 20px;
+height: 20px;
+}
+QTableView::indicator:enabled:checked{
+image: ;
+}
+QTableView::indicator:enabled:unchecked{
+image: ;
+}
+/*選單*/
+QPushButton::menu-indicator{/*setmenu*/
+image:none;
+}
+QMenu{
+border:1px solid rgb(128, 128, 128);
+background-color:rgb(70, 70, 70);
+margin:0px;
+padding:0px;
+}
+QMenu::item {
+margin:0px;
+padding:0 20 0 10px;
+font:15px &quot;宋體&quot;;
+min-height:26px;
+max-height:28px;
+color:rgb(240, 240, 240);
+background-color:rgb(70, 70, 70);
+}
+QSpacerItem{
+background-color: rgb(0, 255, 0);
+}
+QMenu::item:disabled{
+color:rgb(240, 240, 240);
+background-color:rgb(110, 110, 110);
+}
+QMenu::item:selected {
+color:black;
+background-color: rgb(255, 170, 0);
+}
+QMenu::item:selected:disabled{
+color:rgb(240, 240, 240);
+background-color:rgb(110, 110, 110);
+}
+QMenu::separator {/*分割線*/
+height: 1px;
+background: transparent;
+}
+
+
+
+QPushButton[blueBorderButton = &quot;true&quot;]
+{
+	border:1px solid;
+	border-color:#afafaf;
+	font-family:microsoft yahei;
+	color:#555555
+}
+QPushButton[blueBorderButton = &quot;true&quot;]:hover
+{
+	border:1px solid;
+	border-color:#11a9d6;
+	font-family:microsoft yahei;
+	color:#555555
+}
+QPushButton[blueBorderButton = &quot;true&quot;]:pressed
+{
+	background-color:#11a9d6;
+	border:1px solid;
+	border-color:#afafaf;
+	font-family:microsoft yahei;
+	color:white
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_17">
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_16" stretch="5,45,5,45">
+     <property name="leftMargin">
+      <number>10</number>
+     </property>
+     <property name="topMargin">
+      <number>10</number>
+     </property>
+     <property name="rightMargin">
+      <number>10</number>
+     </property>
+     <property name="bottomMargin">
+      <number>10</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="label_13">
+       <property name="styleSheet">
+        <string notr="true">font: 63 36pt &quot;Adobe 繁黑體 Std B&quot;;</string>
+       </property>
+       <property name="text">
+        <string>Socket 通訊測試</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_15" stretch="48,4,48">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_15" stretch="20,80">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_11" stretch="50,30,20">
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_11">
+             <item>
+              <spacer name="verticalSpacer_2">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_9">
+               <property name="styleSheet">
+                <string notr="true">font: 18px &quot;標楷體&quot;;</string>
+               </property>
+               <property name="text">
+                <string>TCP Client</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_10">
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout" stretch="21,79">
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_20">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <item alignment="Qt::AlignLeft">
+                  <widget class="QLabel" name="label">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="text">
+                    <string>TCP IP</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item alignment="Qt::AlignRight">
+                <widget class="QLineEdit" name="tcpcip">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>190</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>350</width>
+                   <height>350</height>
+                  </size>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="15,85">
+               <item alignment="Qt::AlignLeft">
+                <widget class="QLabel" name="label_2">
+                 <property name="text">
+                  <string>TCP Port</string>
+                 </property>
+                </widget>
+               </item>
+               <item alignment="Qt::AlignRight">
+                <widget class="QLineEdit" name="tcport">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>190</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>350</width>
+                   <height>350</height>
+                  </size>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="tcp_client_msg">
+               <property name="placeholderText">
+                <string>輸入字串</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_9">
+             <item>
+              <widget class="QComboBox" name="tcp_client_encode">
+               <item>
+                <property name="text">
+                 <string>UTF-8</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>UTF-16</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>GBK</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>GB2312</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Ascii</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Big5</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>unicode_escape</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="tcp_client_clear">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string>clear</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="tcp_client_send">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string>send</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QTextBrowser" name="tcp_client_show"/>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_6" stretch="20,80">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_9" stretch="50,30,20">
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_5">
+             <item>
+              <spacer name="verticalSpacer">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_11">
+               <property name="styleSheet">
+                <string notr="true">font: 18px &quot;標楷體&quot;;</string>
+               </property>
+               <property name="text">
+                <string>UDP Client</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_4">
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="21,79">
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_17">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>15</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="label_3">
+                   <property name="text">
+                    <string>UDP IP</string>
+                   </property>
+                   <property name="margin">
+                    <number>0</number>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="ucip">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>190</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_4">
+               <item>
+                <widget class="QLabel" name="label_4">
+                 <property name="text">
+                  <string>UDP Port</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="ucport">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>190</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="udp_msg">
+               <property name="placeholderText">
+                <string>輸入字串</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_3">
+             <item>
+              <widget class="QComboBox" name="udp_client_encode">
+               <item>
+                <property name="text">
+                 <string>UTF-8</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>UTF-16</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>GBK</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>gb2312</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Ascii</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Big5</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>unicode_escape</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="udp_client_clear">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string>clear</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="udp_send">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string>send</string>
+               </property>
+               <property name="blueBorderButton" stdset="0">
+                <string>false</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QTextBrowser" name="udp_client_show"/>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <spacer name="verticalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>17</width>
+         <height>28</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_16" stretch="48,4,48">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_14" stretch="20,80">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_14" stretch="50,50">
+           <property name="spacing">
+            <number>6</number>
+           </property>
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_13" stretch="20,80">
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_13" stretch="50,50">
+               <item>
+                <widget class="QLabel" name="label_10">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">font: 18px &quot;標楷體&quot;;</string>
+                 </property>
+                 <property name="text">
+                  <string>TCP Server</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QComboBox" name="tcp_server_encode">
+                 <property name="minimumSize">
+                  <size>
+                   <width>60</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>142</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <item>
+                  <property name="text">
+                   <string>UTF-8</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>UTF-16</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>GBK</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>gb2312</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Ascii</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Big5</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>unicode_escape</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="QPlainTextEdit" name="tcp_server_send">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="placeholderText">
+                <string>在此輸入TCP Server的回復訊息</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_12" stretch="33,33,33">
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_12" stretch="0,0">
+               <property name="topMargin">
+                <number>10</number>
+               </property>
+               <property name="bottomMargin">
+                <number>10</number>
+               </property>
+               <item>
+                <widget class="QPushButton" name="tcp_server_clear">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>1</horstretch>
+                   <verstretch>1</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>86</width>
+                   <height>23</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>160</width>
+                   <height>35</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>clear</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="tcp_server_conn">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>1</horstretch>
+                   <verstretch>1</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>86</width>
+                   <height>23</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>160</width>
+                   <height>35</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>Connect</string>
+                 </property>
+                 <property name="iconSize">
+                  <size>
+                   <width>16</width>
+                   <height>16</height>
+                  </size>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="20,80">
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_19">
+                 <property name="rightMargin">
+                  <number>6</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="label_5">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="text">
+                    <string>TCP  IP</string>
+                   </property>
+                   <property name="margin">
+                    <number>0</number>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="tcpsip">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_8" stretch="20,80">
+               <item>
+                <widget class="QLabel" name="label_6">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="text">
+                  <string>TCP Port</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="tcpsport"/>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QTextBrowser" name="tcp_server_show">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_8">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_10" stretch="50,30,20">
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_2">
+             <item>
+              <widget class="QLabel" name="label_12">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font: 18px &quot;標楷體&quot;;</string>
+               </property>
+               <property name="text">
+                <string>UDP Server</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="udp_server_encode">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>60</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>142</width>
+                 <height>60</height>
+                </size>
+               </property>
+               <item>
+                <property name="text">
+                 <string>UTF-8</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>UTF-16</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>GBK</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>gb2312</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Ascii</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Big5</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>unicode_escape</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_7">
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="22,78">
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_18">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>15</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="label_7">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="text">
+                    <string>UDP IP</string>
+                   </property>
+                   <property name="margin">
+                    <number>0</number>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="usip">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>190</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="20,80">
+               <item>
+                <widget class="QLabel" name="label_8">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="text">
+                  <string>UDP Port</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="usport">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>190</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout">
+             <item>
+              <widget class="QPushButton" name="udp_server_clear">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>86</width>
+                 <height>23</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>clear</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="udp_server_conn">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>86</horstretch>
+                 <verstretch>23</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>86</width>
+                 <height>23</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Connect</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QTextBrowser" name="udp_server_show"/>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

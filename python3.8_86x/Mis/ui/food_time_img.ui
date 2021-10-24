@@ -1,0 +1,875 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1920</width>
+    <height>1080</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>華康儷粗黑</family>
+    <pointsize>12</pointsize>
+    <weight>50</weight>
+    <italic>false</italic>
+    <bold>false</bold>
+   </font>
+  </property>
+  <property name="mouseTracking">
+   <bool>false</bool>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">*{
+background-color: rgb(80, 80, 80);
+font: 12pt &quot;華康儷粗黑&quot;;
+color: rgb(250,250,250);
+selection-background-color: rgb(255, 255, 255);/*選中文字*/
+selection-color: rgb(0, 0, 0);
+outline:none;/*焦點框*/
+}
+#centralWidget{
+background-color: rgb(80, 80, 80);
+border-bottom:5px solid rgb(20, 20, 20);
+}
+/*其他(控制元件公共樣式在最後)*/
+
+/*tab 1中按鈕示例*/
+#btnHoverOrange{
+border-color:rgb(255, 170, 0);
+}
+#btnPressOrange{
+color:black;
+border-color: rgb(128, 128, 128);
+background-color:rgb(255, 170, 0);
+}
+#btnHoverBlue{
+border-color:rgb(0, 170, 255);
+}
+#btnPressBlue{
+color:black;
+border-color: rgb(128, 128, 128);
+background-color:rgb(0, 170, 255);
+}
+/*tab 1中勾選框示例*/
+#checkHoverOrange{
+color: rgb(255, 170, 0);
+}
+#checkHoverOrange::indicator{
+border-image: url(:/img/check_orange.png);
+}
+#checkCheckOrange::indicator{
+border-image: url(:/img/checked_orange.png);
+}
+#checkHoverBlue{
+color: rgb(0, 170, 255);
+}
+#checkHoverBlue::indicator{
+border-image: url(:/img/check_blue.png);
+}
+#checkCheckBlue::indicator{
+border-image: url(:/img/checked_blue.png);
+}
+#checkHoverGreen{
+color: rgb(0, 255, 127);
+}
+#checkHoverGreen::indicator{
+border-image: url(:/img/check_green.png);
+}
+#checkCheckGreen::indicator{
+border-image: url(:/img/checked_green.png);
+}
+/*tab1 下拉框示例*/
+#comboHover{
+border:1px solid rgb(255, 170, 0);
+}
+#comboHover::down-arrow{
+border-image: url(:/img/down_orange.png);
+}
+/*tab 1編輯框示例*/
+#editHover{
+border:1px solid rgb(255, 170, 0);
+}
+/*tab 1數字框示例*/
+#spinHoverOrange{
+border:1px solid rgb(255, 170, 0);
+}
+#spinHoverOrange::up-button{
+border-image: url(:/img/up_orange.png);
+}
+#spinHoverBlue{
+border:1px solid rgb(0, 170, 255);
+}
+#spinHoverBlue::up-button{
+border-image: url(:/img/up_blue.png);
+}
+/*自定義按鈕欄*/
+#toolBar{	
+background-color: rgb(20, 20, 20);
+border-bottom:2px solid rgb(0, 170, 255);
+}
+#toolBar QPushButton{	
+color: rgb(250, 250, 250);
+border:0;
+border-radius:0;
+background-color: transparent;
+}
+#toolBar QPushButton:hover{		
+color:rgb(255, 170, 0);
+background-color: rgba(255, 255, 255, 50);
+}
+#toolBar QPushButton:pressed{		
+background-color: rgba(255, 255, 255, 80);
+}
+QPushButton#btnSet{
+background-image: url(:/img/set_gray.png);
+background-repeat:no-repeat;
+background-position:center center;
+}
+QPushButton#btnSet:hover{
+background-image: url(:/img/set_orange.png);
+}
+QPushButton#btnMin{
+background-image: url(:/img/min_gray.png);
+background-repeat:no-repeat;
+background-position:center center;
+}
+QPushButton#btnMin:hover{
+background-image: url(:/img/min_orange.png);
+}
+QPushButton#btnMax{
+background-image: url(:/img/max_gray.png);
+background-repeat:no-repeat;
+background-position:center center;
+}
+QPushButton#btnMax:hover{
+background-image: url(:/img/max_orange.png);
+}
+QPushButton#btnClose{
+background-image: url(:/img/close_gray.png);
+background-repeat:no-repeat;
+background-position:center center;
+}
+QPushButton#btnClose:hover{
+background-image: url(:/img/close_red.png);
+}
+
+/*ToolBox*/
+QToolBox{
+background-color: rgb(80, 80, 80);/*背景色-空隙顏色*/
+border:1px solid rgb(128, 128, 128);
+}
+QToolBox QWidget{/*tab頁*/
+background-color: rgb(80, 80, 80);
+}
+QToolBox&gt;QAbstractButton{/*標題欄*/
+min-height:30px;
+}
+QToolBox::tab{
+background-color:rgb(40, 40, 40);
+}
+QToolBox::tab:hover{
+color:black;
+background-color: rgb(255, 170, 0);
+}
+QToolBox::tab:selected{
+color:rgb(255, 170, 0);
+}
+QToolBox::tab:selected:hover{
+color:black;
+}
+/*分裂器*/
+QSplitter::handle{
+background-color: rgb(60, 60, 60);
+margin:2px;
+}
+/*滾動區域*/
+QScrollArea{
+border:0;
+background-color: transparent;
+}
+/*滾動條 */
+QScrollBar:vertical{/*豎向*/
+width:20px;
+padding:0 3px;
+margin:0;
+background-color:transparent;
+}
+QScrollBar::add-page:vertical,QScrollBar::sub-page:vertical{
+background-color: transparent;
+}
+QScrollBar::handle:vertical{
+width:10px;
+min-height:20px;
+margin:20px 0;
+background-color:rgb(100, 100, 100);
+}
+QScrollBar::handle:vertical:hover{
+background-color:rgb(150, 150, 150);
+}
+QScrollBar::add-line:vertical{
+height:20px;
+width:20px;
+subcontrol-position:bottom;
+border-image: url(:/img/down2_white.png);
+}
+QScrollBar::sub-line:vertical{
+height:20px;
+width:20px;
+subcontrol-position:top;
+border-image: url(:/img/up2_white.png);
+}
+QScrollBar::sub-line:vertical:hover{
+border-image: url(:/img/up2_orange.png);
+}
+QScrollBar::add-line:vertical:hover{
+border-image: url(:/img/down2_orange.png);
+}
+QScrollBar:horizontal{/*橫向*/
+height:20px;
+padding:3px;
+margin:0;
+background-color:transparent;
+}
+QScrollBar::add-page:horizontal,QScrollBar::sub-page:horizontal{
+background-color: transparent;
+}
+QScrollBar::handle:horizontal{
+height:10px;
+min-width:20px;
+margin:0 20px;
+background-color:rgb(100, 100, 100);
+}
+QScrollBar::handle:horizontal:hover{
+background-color:rgb(150, 150, 150);
+}
+QScrollBar::add-line:horizontal{
+height:20px;
+width:20px;
+subcontrol-position:right;
+border-image: url(:/img/right2_white.png);
+}
+QScrollBar::sub-line:horizontal{
+height:20px;
+width:20px;
+subcontrol-position:left;
+border-image: url(:/img/left2_white.png);
+}
+QScrollBar::add-line:horizontal:hover{
+border-image: url(:/img/right2_orange.png);
+}
+QScrollBar::sub-line:horizontal:hover{
+border-image: url(:/img/left2_orange.png);
+}
+/*TabWidget*/
+QTabWidget{
+}
+QTabWidget&gt;QWidget&gt;QWidget{/*tab頁*/
+background-color: rgb(80, 80, 80);
+}
+QTabWidget::tab-bar{
+alignment:left;/*tab位置*/
+}
+QTabWidget::pane { /*內容區域*/
+background-color: rgb(80, 80, 80);/*背景色-空隙顏色*/
+border:1px solid rgb(128, 128, 128);
+} 
+QTabBar{
+color:white;
+background-color:transparent;
+}
+QTabBar::tab{/*頁籤*/
+min-height:30px;
+width:120px;
+border-top-left-radius:20px;
+border-bottom-right-radius:20px;
+margin-right:1px;
+margin-bottom:1px;
+background-color:rgb(40, 40, 40);
+}
+QTabBar::tab:hover{
+color:black;
+background-color: rgb(255, 170, 0);
+border-bottom-right-radius:0px;
+}
+QTabBar::tab:selected{
+color:rgb(255, 170, 0);
+border-bottom-right-radius:0px;
+}
+QTabBar::tab:selected:hover{
+color:black;
+}
+QTabBar::tear{/*選項過多時的。。。*/
+imag:;
+}
+QTabBar::scroller{
+width:60px;
+}
+/*文字框*/
+QTextEdit{
+color:white;
+border:1px solid rgb(128, 128, 128);
+background-color: rgb(90, 90, 90);
+}
+/*按鈕*/
+QPushButton{
+color:rgb(250, 250, 250);
+border:1px solid rgb(128, 128, 128);
+background-color: rgb(40 ,40 ,40);
+border-radius:4px;
+}
+QPushButton:hover{
+border-color:rgb(255, 170, 0);
+}
+QPushButton:pressed{
+background-color: rgb(255, 170, 0);
+border-color: rgb(128, 128, 128);
+color:black;
+}
+QPushButton:checked{
+color: rgb(0, 255, 127);
+border-color: rgb(0, 255, 127);
+background-image: url(:/img/right3_green.png);
+background-repeat:no-repeat;
+background-position:center left;
+}
+QPushButton:disabled{
+color: rgb(230, 230, 230);
+background-color: rgb(150, 150, 150);
+}
+QPushButton:checked:pressed{
+color:black;
+}
+QPushButton:checked:disabled{
+color: rgb(230, 230, 230);
+border-color: rgb(128, 128, 128);
+background-color: rgb(150, 150, 150);
+background-image: url(:/img/right3_white.png);
+}
+/*勾選框*/
+QCheckBox{
+margin-left:5px;
+spacing:3px;/*點選框與文字距離*/
+color: rgb(250,250,250);
+}
+QCheckBox:hover{
+color: rgb(0, 255, 127);
+}
+QCheckBox:disabled{
+color: rgb(230, 230, 230);
+}
+QCheckBox::indicator{/*點選框*/
+width:20px;
+height:20px;
+}
+
+/*下拉列表*/
+QComboBox{
+padding-left: 5px;
+padding-right: 2px;
+color:rgb(250 ,250 ,250);
+border:1px solid rgb(128, 128, 128);
+background-color:  rgb(100 ,100 ,100);
+}
+QComboBox:hover{
+border:1px solid rgb(255, 170, 0);
+}
+QComboBox:disabled{
+color: rgb(230, 230, 230);
+background-color:rgb(150, 150, 150);
+}
+QComboBox:editable{
+background-color:rgb(100, 100, 100);
+}
+QComboBox:editable:disabled{
+background-color:rgb(150, 150, 150);
+}
+QComboBox QAbstractItemView{
+background-color:rgb(110, 110, 110);
+}
+QComboBox QAbstractItemView::item{/*需要程式碼中-&amp;gt;setView(new QListView(this));*/
+height:26px;
+font: 15px &quot;宋體&quot;;
+}
+QComboBox QAbstractItemView::item:hover{
+color:black;
+background-color: rgb(255, 170, 0);
+}
+QComboBox QAbstractItemView::item:selected{
+background-color: rgb(255, 170, 0);
+}
+QComboBox::drop-down {
+width:20px;
+height:20px;
+subcontrol-position: center right;
+right:2px;
+border:0;
+background-color:transparent;
+}
+QComboBox::down-arrow {/*替換三角小圖示*/
+width:20px;
+height:20px;
+border-image: url(:/img/down_white.png);
+}
+QComboBox::down-arrow:hover {
+border-image: url(:/img/down_orange.png);
+}
+QComboBox::down-arrow:disabled {
+border-image: url(:/img/down2_white.png);
+}
+/*編輯框*/
+QLineEdit{
+padding: 0 5px;
+color: rgb(250 ,250 ,250);
+background-color: rgb(100, 100, 100);
+border:1px solid rgb(128, 128, 128);
+}
+QLineEdit:hover{
+border:1px solid rgb(255, 170, 0);
+}
+QLineEdit[readOnly=true],QLineEdit:disabled{
+color: rgb(230, 230, 230);
+background-color:rgb(150, 150, 150);
+}
+/*整數框*/
+QSpinBox{
+padding:0 5px;
+color: rgb(250, 250, 250);
+background-color:  rgb(100, 100, 100);
+border:1px solid rgb(128, 128, 128);
+}
+QSpinBox:hover{
+border:1px solid rgb(255, 170, 0);
+}
+QSpinBox:disabled{
+color: rgb(230, 230, 230);
+background-color:rgb(150, 150, 150);
+}
+QSpinBox[buttonSymbols=&quot;0&quot;]::up-button{/*顯示按鈕=0*/
+width:20px;
+height:14px;
+subcontrol-origin:border;
+subcontrol-position:top right;
+right:2px;
+top:2px;
+border-image: url(:/img/up_white.png);
+}
+QSpinBox::up-button:hover{
+border-image: url(:/img/up_orange.png);
+}
+QSpinBox::up-button:pressed{
+}
+QSpinBox[buttonSymbols=&quot;0&quot;]::down-button{
+width:20px;
+height:14px;
+subcontrol-origin:border;
+subcontrol-position:bottom right;
+right:2px;
+bottom:2px;
+border-image: url(:/img/down_white.png);
+}
+QSpinBox::down-button:hover{
+border-image: url(:/img/down_orange.png);
+}
+QSpinBox::down-button:pressed{
+}
+QSpinBox::up-button:disabled{
+border-image: url(:/img/up2_white.png);
+}
+QSpinBox::down-button:disabled{
+border-image: url(:/img/down2_white.png);
+}
+/*表頭*/
+QHeaderView{
+font: 15px &quot;宋體&quot;;
+color:rgb(240, 240, 240);
+background-color: rgb(80, 80, 80);
+}
+QHeaderView::section:horizontal{/*橫表頭*/
+min-height:30px;
+border:0;
+border-bottom:1px solid rgb(0, 170, 255);
+background-color: rgb(60,60,60);
+}
+QHeaderView::section:vertical{/*豎表頭*/
+min-width:60px;
+padding-left:15px;
+border:1px solid rgb(128, 128, 128);
+border-top:0;
+border-left:0;
+background-color: rgb(60, 60, 60);
+}
+QHeaderView::section{
+font: 15px &quot;宋體&quot;;
+text-align:center;
+}
+QHeaderView::section:hover{
+color:black;
+background-color: rgb(255, 170, 0);
+}
+QHeaderView::section:checked{/*不取消高亮*/
+font: 15px &quot;宋體&quot;;
+font-weight:normal;
+color: rgb(255, 170, 0);
+}
+QHeaderView::section:selected{
+font: 15px &quot;宋體&quot;;
+font-weight:normal;
+color: red;
+}
+QHeaderView::section:checked:hover{
+font-weight:normal;
+color: rgb(240, 240, 240);
+}
+QHeaderView::section:first{/*表頭第一個位置*/
+}
+QHeaderView::down-arrow{/*圖示用來排序的*/
+}
+QHeaderView::up-arrow{
+}
+/*表格*/
+QTableView{/*對齊方式程式碼設定*/
+border:1px solid rgb(128, 128, 128);
+gridline-color: rgb(128, 128, 128);/*網格線顏色*/
+background-color: rgb(80, 80, 80);
+}
+QTableView QTableCornerButton::section{/*表頭左上*/
+background-color: rgb(60,60,60);
+border:0;
+border-bottom:1px solid rgb(0, 170, 255);
+}
+QTableView::item{/*表內容*/
+font: 15px &quot;宋體&quot;;
+color: rgb(250, 250, 250);
+background-color: rgb(80, 80, 80);
+}
+QTableView::item:selected{
+color:black;
+background-color: rgb(255, 170, 0);
+}
+QTableView::indicator{
+width: 20px;
+height: 20px;
+}
+QTableView::indicator:enabled:checked{
+image: ;
+}
+QTableView::indicator:enabled:unchecked{
+image: ;
+}
+/*選單*/
+QPushButton::menu-indicator{/*setmenu*/
+image:none;
+}
+QMenu{
+border:1px solid rgb(128, 128, 128);
+background-color:rgb(70, 70, 70);
+margin:0px;
+padding:0px;
+}
+QMenu::item {
+margin:0px;
+padding:0 20 0 10px;
+font:15px &quot;宋體&quot;;
+min-height:26px;
+max-height:28px;
+color:rgb(240, 240, 240);
+background-color:rgb(70, 70, 70);
+}
+QSpacerItem{
+background-color: rgb(0, 255, 0);
+}
+QMenu::item:disabled{
+color:rgb(240, 240, 240);
+background-color:rgb(110, 110, 110);
+}
+QMenu::item:selected {
+color:black;
+background-color: rgb(255, 170, 0);
+}
+QMenu::item:selected:disabled{
+color:rgb(240, 240, 240);
+background-color:rgb(110, 110, 110);
+}
+QMenu::separator {/*分割線*/
+height: 1px;
+background: transparent;
+}
+
+
+
+QPushButton[blueBorderButton = &quot;true&quot;]
+{
+	border:1px solid;
+	border-color:#afafaf;
+	font-family:microsoft yahei;
+	color:#555555
+}
+QPushButton[blueBorderButton = &quot;true&quot;]:hover
+{
+	border:1px solid;
+	border-color:#11a9d6;
+	font-family:microsoft yahei;
+	color:#555555
+}
+QPushButton[blueBorderButton = &quot;true&quot;]:pressed
+{
+	background-color:#11a9d6;
+	border:1px solid;
+	border-color:#afafaf;
+	font-family:microsoft yahei;
+	color:white
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_6">
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_5" stretch="20,80">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>門禁管制</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="85,15">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QPlainTextEdit" name="inside"/>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <spacer name="verticalSpacer">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <property name="leftMargin">
+            <number>20</number>
+           </property>
+           <property name="topMargin">
+            <number>20</number>
+           </property>
+           <property name="rightMargin">
+            <number>20</number>
+           </property>
+           <property name="bottomMargin">
+            <number>20</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="total_num">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>100</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="text">
+              <string>入場人數:0</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+             <property name="show" stdset="0">
+              <string>text</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="75,15,5,5">
+       <item>
+        <spacer name="horizontalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="vendor_name">
+         <property name="minimumSize">
+          <size>
+           <width>200</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="placeholderText">
+          <string>輸入廠商名稱:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="vendor_number">
+         <property name="minimumSize">
+          <size>
+           <width>80</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="placeholderText">
+          <string>人數:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="send_vendor">
+         <property name="minimumSize">
+          <size>
+           <width>80</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>送出</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout" stretch="95,1">
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Minimum</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>200</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="text">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>10</width>
+           <height>10</height>
+          </size>
+         </property>
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(99, 81, 58);
+color: rgb(99, 81, 58);</string>
+         </property>
+         <property name="inputMask">
+          <string/>
+         </property>
+         <property name="echoMode">
+          <enum>QLineEdit::Normal</enum>
+         </property>
+         <property name="cursorPosition">
+          <number>0</number>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignVCenter</set>
+         </property>
+         <property name="readOnly">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QTableWidget" name="tableWidget">
+     <attribute name="horizontalHeaderStretchLastSection">
+      <bool>true</bool>
+     </attribute>
+     <column>
+      <property name="text">
+       <string>姓名</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>工號</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>部門</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>時間</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../icon/qq.qrc"/>
+ </resources>
+ <connections/>
+</ui>

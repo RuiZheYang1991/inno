@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1600</width>
+    <height>900</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>微軟正黑體</family>
+    <pointsize>26</pointsize>
+    <weight>9</weight>
+    <italic>false</italic>
+    <bold>false</bold>
+   </font>
+  </property>
+  <property name="mouseTracking">
+   <bool>false</bool>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget{background-color:rgb(48, 48, 48);
+				
+	font: 75 26pt &quot;微軟正黑體&quot;;
+	color:rgb(186, 195, 194);
+	border-radius:30px;
+	
+	background-color: qlineargradient(spread:pad, x1:0, y1:0.37, x2:1, y2:0, stop:0.159091 rgba(118, 95, 61, 255), stop:0.505682 rgba(78, 66, 55, 255), stop:0.863636 rgba(115, 71, 33, 255));
+}
+
+QLabel {
+	font: 22pt &quot;標楷體&quot;;
+	color: qlineargradient(spread:pad, x1:0.128416, y1:0.937, x2:0.871287, y2:0, stop:0.163366 rgba(42, 52, 54, 255), stop:0.559406 rgba(118, 52, 52, 255), stop:0.980198 rgba(45, 17, 25, 255));
+border-radius:30px;
+	background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0.159091 rgba(199, 199, 199, 255), stop:0.488636 rgba(172, 172, 172, 255), stop:0.863636 rgba(210, 208, 207, 255));
+}
+
+QPlainTextEdit{background-color:rgb(157, 157, 157);
+color:rgb(159, 50, 64);
+	font: 36pt &quot;微軟正黑體&quot;;
+border-radius:30px;
+	background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0.159091 rgba(199, 199, 199, 255), stop:0.488636 rgba(172, 172, 172, 255), stop:0.863636 rgba(210, 208, 207, 255));
+
+
+
+
+}
+</string>
+  </property>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>40</y>
+     <width>1181</width>
+     <height>851</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_4">
+    <item>
+     <widget class="QPlainTextEdit" name="food">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="plainText">
+       <string>請刷卡
+Scan Your QRcode</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="name">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>UserName</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="number">
+      <property name="text">
+       <string>UserNo</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="text">
+            <property name="autoFillBackground">
+             <bool>false</bool>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(99, 81, 58);
+color: rgb(99, 81, 58);</string>
+            </property>
+            <property name="inputMask">
+             <string/>
+            </property>
+            <property name="echoMode">
+             <enum>QLineEdit::Normal</enum>
+            </property>
+            <property name="cursorPosition">
+             <number>0</number>
+            </property>
+            <property name="readOnly">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <spacer name="verticalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <widget class="QRadioButton" name="radioButton_3">
+            <property name="styleSheet">
+             <string notr="true">background-color:rgb(109, 89, 60);
+color:black;
+font: 8pt &quot;標楷體&quot;;
+
+QComboBox::hover
+{
+    border:1px solid #2080F7;  
+
+    padding:1px 18px 1px 3px; 
+
+    min-width:100px; 
+
+       font:12px; 
+}</string>
+            </property>
+            <property name="text">
+             <string>早餐</string>
+            </property>
+            <attribute name="buttonGroup">
+             <string notr="true">buttonGroup</string>
+            </attribute>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioButton">
+            <property name="styleSheet">
+             <string notr="true">background-color:rgb(109, 89, 60);
+color:black;
+font: 8pt &quot;標楷體&quot;;
+
+QComboBox::hover
+{
+    border:1px solid #2080F7;  
+
+    padding:1px 18px 1px 3px; 
+
+    min-width:100px; 
+
+       font:12px; 
+}</string>
+            </property>
+            <property name="text">
+             <string>午餐</string>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+            <property name="autoRepeat">
+             <bool>false</bool>
+            </property>
+            <attribute name="buttonGroup">
+             <string notr="true">buttonGroup</string>
+            </attribute>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioButton_2">
+            <property name="styleSheet">
+             <string notr="true">background-color:rgb(109, 89, 60);
+color:black;
+font: 8pt &quot;標楷體&quot;;
+
+QComboBox::hover
+{
+    border:1px solid #2080F7;  
+
+    padding:1px 18px 1px 3px; 
+
+    min-width:100px; 
+
+       font:12px; 
+}</string>
+            </property>
+            <property name="text">
+             <string>晚餐</string>
+            </property>
+            <attribute name="buttonGroup">
+             <string notr="true">buttonGroup</string>
+            </attribute>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioButton_4">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:rgb(109, 89, 60);
+color:black;
+font: 8pt &quot;標楷體&quot;;
+
+QComboBox::hover
+{
+    border:1px solid #2080F7;  
+
+    padding:1px 18px 1px 3px; 
+
+    min-width:100px; 
+
+       font:12px; 
+}</string>
+            </property>
+            <property name="text">
+             <string>宵夜</string>
+            </property>
+            <attribute name="buttonGroup">
+             <string notr="true">buttonGroup</string>
+            </attribute>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+ <buttongroups>
+  <buttongroup name="buttonGroup"/>
+ </buttongroups>
+</ui>

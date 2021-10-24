@@ -1,0 +1,86 @@
+QMainWindow{
+    background-color :gray
+}
+QDateTimeEdit{
+    background-color :gray
+}
+
+
+QTabWidget[lightblue = "true"] QTabBar::tab{
+	border-top:1px solid rgb(249,249,249);
+	border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+	max-height:20px;
+	min-height:20px;
+	min-width:95px;
+	font-family:microsoft yahei;
+	color:rgb(50,50,50);
+	font-size:13px;
+	padding:0px 0px 0px 0px;
+	border-image:url();
+	margin: 0px;
+	padding-bottom:15px;
+}
+QTabWidget[lightblue = "true"] QTabBar::tab:selected{
+	border-left:1px solid rgb(192,215,250);
+	border-right:1px solid rgb(192,215,250);
+	border-top:1px solid rgb(192,215,250);
+	color:rgb(50,50,50);
+	background-color:rgb(249,249,249);
+	font-size:13px;
+	border-image:url();
+	margin: 0px;
+}
+QTabWidget[lightblue = "true"]::pane {
+ border-top: 1px solid rgb(192,215,250);
+ position: absolute;
+ top: -1px;
+}
+
+QLabel[blueTitle="true"]
+{
+	font-size:18px;
+	font-family:Microsoft YaHei;
+	color:rgb(255,255,255);
+	background-color:rgb(5 ,112, 183 );
+	padding-left:25px;
+}
+
+
+QLabel[textclass="text"]
+{
+	font-family:Microsoft YaHei;
+	font-size:16px;
+	background-color: rgb(207, 207, 207);
+	padding-left: 25px;
+	border-radius: 5px;
+}
+
+QPushButton
+{
+	color:rgb(255,255,255);
+	border-radius:5px;
+	background-color:rgb(0,109,204);
+	font-family:Arial;
+}
+QPushButton:hover
+{
+	background-color:rgb(0 ,119, 224 );
+}
+QPushButton:pressed
+{
+	background-color:rgb(0 ,149 ,255  );
+}
+
+
+QProgressBar{
+    color : solid black;
+    border: 2px solid yellow;
+    border-radius: 5px;
+    background: transparent;
+    padding: 0px;
+    text-align : center ;
+}
+QProgressBar::chunk{
+    background: #B22222;
+}
